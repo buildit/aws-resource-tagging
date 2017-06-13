@@ -18,5 +18,5 @@ Events flow from Cloudwatch -> SNS -> Lambda.
 
 TODO:
 
-Assumes the SNS topic is already created. Should create the topic on the fly
-Add more taggable resources.  
+    - Assumes the SNS topic is already created. Should create the topic on the fly
+    - Add more taggable resources.  
