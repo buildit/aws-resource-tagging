@@ -1,0 +1,78 @@
+# Welcome to Serverless!
+#
+# This file is the main config file for your service.
+# It's very minimal at this point and uses default values.
+# You can always add more config options for more control.
+# We've included some commented out config examples here.
+# Just uncomment any of them to get that config option.
+#
+# For full config options, check the docs:
+#    docs.serverless.com
+#
+# Happy Coding!
+
+service: auto-resource-tagging
+
+# You can pin your service to only deploy with a specific Serverless version
+# Check out our docs for more details
+# frameworkVersion: "=X.X.X"
+
+provider:
+  name: aws
+  runtime: java8
+
+# you can overwrite defaults here
+#  stage: dev
+  region: us-east-1
+
+# you can add statements to the Lambda function's IAM Role here
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - "s3:GetBucketTagging"
+        - "s3:PutBucketTagging"
+        - "lambda:ListTags"
+        - "lambda:TagResource"
+        - "ec2:DescribeTags"
+        - "ec2:CreateTags"
+      Resource: "*"
+
+package:
+  artifact: build/distributions/auto-resource-tagging.zip
+
+resources:
+  Resources:
+    AutoTaggingRule:
+      Type: AWS::Events::Rule
+      Properties:
+        Description: EventRule
+        EventPattern:
+          source:
+          - aws.ec2
+          - aws.lambda
+          - aws.s3
+          detail-type:
+          - AWS API Call via CloudTrail
+          detail:
+            eventName:
+            - CreateBucket
+            - CreateFunction20150331
+            - RunInstances
+            - CreateNetworkInterface
+            - CreateInternetGateway
+            - CreateRouteTable
+            - CreateSubnet
+            - CreateVpc
+        State: ENABLED
+        Targets:
+        - Id: Id318300972204
+          Arn: arn:aws:sns:us-east-1:006393696278:aws-ct-api-events
+
+
+functions:
+  awstagging:
+    handler: digital.buildit.resourcetagginggging.Handler
+
+    events:
+      - sns: arn:aws:sns:us-east-1:006393696278:aws-ct-api-events
+
