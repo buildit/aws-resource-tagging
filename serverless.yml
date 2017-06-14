@@ -1,31 +1,11 @@
-# Welcome to Serverless!
-#
-# This file is the main config file for your service.
-# It's very minimal at this point and uses default values.
-# You can always add more config options for more control.
-# We've included some commented out config examples here.
-# Just uncomment any of them to get that config option.
-#
-# For full config options, check the docs:
-#    docs.serverless.com
-#
-# Happy Coding!
-
 service: auto-resource-tagging
-
-# You can pin your service to only deploy with a specific Serverless version
-# Check out our docs for more details
-# frameworkVersion: "=X.X.X"
 
 provider:
   name: aws
   runtime: java8
 
-# you can overwrite defaults here
-#  stage: dev
   region: us-east-1
 
-# you can add statements to the Lambda function's IAM Role here
   iamRoleStatements:
     - Effect: "Allow"
       Action:
@@ -42,6 +22,11 @@ package:
 
 resources:
   Resources:
+    AutoTaggingTopic:
+      Type: AWS::SNS::Topic
+      Properties:
+        DisplayName: AutoTagEventTopic
+        TopicName: auto-tag-event-topic
     AutoTaggingRule:
       Type: AWS::Events::Rule
       Properties:
@@ -65,14 +50,16 @@ resources:
             - CreateVpc
         State: ENABLED
         Targets:
-        - Id: Id318300972204
-          Arn: arn:aws:sns:us-east-1:006393696278:aws-ct-api-events
+        - Id: 1
+          Arn:
+            Ref: AutoTaggingTopic
 
 
 functions:
   awstagging:
     handler: digital.buildit.resourcetagginggging.Handler
-
     events:
-      - sns: arn:aws:sns:us-east-1:006393696278:aws-ct-api-events
-
+      - sns:
+          arn:
+            Ref: AutoTaggingTopic
+          topicName: AutoTaggingTopic
