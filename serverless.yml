@@ -4,7 +4,7 @@ provider:
   name: aws
   runtime: java8
 
-  region: us-east-1
+  region: ap-northeast-2
 
   iamRoleStatements:
     - Effect: "Allow"
@@ -57,7 +57,7 @@ resources:
 
 functions:
   awstagging:
-    handler: digital.buildit.resourcetagginggging.Handler
+    handler: digital.buildit.resourcetagging.Handler
     events:
       - sns:
           arn:
