@@ -1,24 +1,17 @@
 package digital.buildit.resourcetagging.taggers;
 
-import digital.buildit.resourcetagging.event.EventExtractor;
+
+import digital.buildit.resourcetagging.event.IdentifierSupplier;
 
 /**
  *
- * Created by will on 08/06/2017.
+ * Created by will on 14/06/2017.
  */
-abstract class AbstractTagger implements Tagger {
+abstract class AbstractTagger<T> implements Tagger {
 
-    final String USER_ARN_TAG_KEY = "OwnerARN";
+    IdentifierSupplier<T> idSupplier;
 
-    EventExtractor eventExtractor;
-
-    AbstractTagger(EventExtractor eventExtractor) {
-        this.eventExtractor = eventExtractor;
+    AbstractTagger(IdentifierSupplier<T> idSupplier) {
+        this.idSupplier = idSupplier;
     }
-
-    String extractUserArn() {
-        return eventExtractor.extractUserArn();
-    }
-
-
 }

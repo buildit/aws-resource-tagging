@@ -21,7 +21,10 @@ public class Handler implements RequestHandler<SNSEvent, Void> {
 					LOG.info("Received event record: " + message);
 
 					EventExtractor eventExtractor = new JsonEventExtractor(message);
-					new TaggerFactory(eventExtractor).createTagger().tag();
+					String eventName = eventExtractor.extractEventName();
+					String userARN = eventExtractor.extractUserArn();
+
+					new TaggerFactory(eventExtractor).loadTagger(eventName).tag(userARN);
 				});
 
 		//Meh Generics!

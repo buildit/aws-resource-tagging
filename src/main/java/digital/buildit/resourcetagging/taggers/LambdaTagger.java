@@ -5,7 +5,7 @@ import com.amazonaws.services.lambda.AWSLambdaClientBuilder;
 import com.amazonaws.services.lambda.model.ListTagsRequest;
 import com.amazonaws.services.lambda.model.ListTagsResult;
 import com.amazonaws.services.lambda.model.TagResourceRequest;
-import digital.buildit.resourcetagging.event.EventExtractor;
+import digital.buildit.resourcetagging.event.IdentifierSupplier;
 
 import java.util.Map;
 
@@ -13,16 +13,16 @@ import java.util.Map;
  * Tags Lambda functions.
  * Created by will on 08/06/2017.
  */
-public class LambdaTagger extends AbstractTagger {
+public class LambdaTagger extends AbstractTagger<String> {
 
 
-    public LambdaTagger(EventExtractor eventExtractor) {
-        super(eventExtractor);
+    public LambdaTagger(IdentifierSupplier<String> identifierSupplier) {
+        super(identifierSupplier);
     }
 
     @Override
-    public void tag() {
-        String functionARN = eventExtractor.extractLambdaFunctionARN();
+    public void tag(String userARN) {
+        String functionARN = idSupplier.get();
 
         ListTagsRequest listTagsRequest = new ListTagsRequest();
         listTagsRequest.setResource(functionARN);
@@ -30,7 +30,7 @@ public class LambdaTagger extends AbstractTagger {
         ListTagsResult listTagsResult = awsLambda.listTags(listTagsRequest);
 
         Map<String, String> tags = listTagsResult.getTags();
-        tags.put(USER_ARN_TAG_KEY, extractUserArn());
+        tags.put(USER_ARN_TAG_KEY, userARN);
 
         TagResourceRequest tagResourceRequest = new TagResourceRequest();
         tagResourceRequest.setResource(functionARN);

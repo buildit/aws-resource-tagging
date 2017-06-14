@@ -6,8 +6,10 @@ package digital.buildit.resourcetagging.taggers;
  */
 public interface Tagger {
 
+    String USER_ARN_TAG_KEY = "OwnerARN";
+
     /**
      * Execute the tagging
      */
-    void tag();
+    void tag(String userARN);
 }
