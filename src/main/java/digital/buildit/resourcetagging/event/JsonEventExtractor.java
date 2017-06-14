@@ -19,7 +19,7 @@ public class JsonEventExtractor implements EventExtractor {
     /*** Generic ***/
     @Override
     public String extractEventName() {
-        return ctx.read("$.details.eventName");
+        return ctx.read("$.detail.eventName");
     }
 
     @Override

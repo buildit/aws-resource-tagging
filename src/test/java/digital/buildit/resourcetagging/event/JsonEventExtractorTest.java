@@ -13,6 +13,11 @@ import java.util.List;
  */
 public class JsonEventExtractorTest {
 
+    @Test
+    public void extractEventName() {
+        String eventName = loadEventExtractor(CREATE_INTERNET_GATEWAY).extractEventName();
+        Assert.assertEquals("Missing or wrong event name", "CreateInternetGateway", eventName);
+    }
 
     @Test
     public void extractUserArn() {
