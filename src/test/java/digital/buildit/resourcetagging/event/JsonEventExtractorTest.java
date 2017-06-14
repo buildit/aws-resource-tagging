@@ -16,7 +16,6 @@ public class JsonEventExtractorTest {
 
     @Test
     public void extractUserArn() {
-
         String userARN = loadEventExtractor(MESSAGE).extractUserArn();
         Assert.assertEquals("ARN not equal", "arn:aws:iam::0000000000:user/test.testerson@test.com", userARN);
     }
@@ -275,5 +274,4 @@ public class JsonEventExtractorTest {
             "    \n" +
             "  }\n" +
             "}";
-
 }

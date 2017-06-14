@@ -15,7 +15,6 @@ import java.util.Map;
  */
 public class LambdaTagger extends AbstractTagger<String> {
 
-
     public LambdaTagger(IdentifierSupplier<String> identifierSupplier) {
         super(identifierSupplier);
     }

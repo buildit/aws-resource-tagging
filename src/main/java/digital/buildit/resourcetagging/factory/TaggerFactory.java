@@ -6,9 +6,10 @@ import digital.buildit.resourcetagging.taggers.LambdaTagger;
 import digital.buildit.resourcetagging.taggers.S3Tagger;
 import digital.buildit.resourcetagging.taggers.Tagger;
 
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
+
+import static java.util.Collections.singletonList;
 
 
 /**
@@ -24,11 +25,11 @@ public class TaggerFactory {
         taggers.put("CreateBucket", new S3Tagger(eventExtractor::extractBucketName));
         taggers.put("CreateFunction20150331", new LambdaTagger(eventExtractor::extractLambdaFunctionARN));
         taggers.put("RunInstances", new Ec2Tagger(eventExtractor::extractInstanceIds));
-        taggers.put("CreateNetworkInterface", new Ec2Tagger(() -> Collections.singletonList(eventExtractor.extractNetworkInterfaceId())));
-        taggers.put("CreateInternetGateway", new Ec2Tagger(() -> Collections.singletonList(eventExtractor.extractInternetGateway())));
-        taggers.put("CreateRouteTable", new Ec2Tagger(() -> Collections.singletonList(eventExtractor.extractRouteTable())));
-        taggers.put("CreateSubnet", new Ec2Tagger(() -> Collections.singletonList(eventExtractor.extractSubnetId())));
-        taggers.put("CreateVpc", new Ec2Tagger(() -> Collections.singletonList(eventExtractor.extractVPCId())));
+        taggers.put("CreateNetworkInterface", new Ec2Tagger(() -> singletonList(eventExtractor.extractNetworkInterfaceId())));
+        taggers.put("CreateInternetGateway", new Ec2Tagger(() -> singletonList(eventExtractor.extractInternetGateway())));
+        taggers.put("CreateRouteTable", new Ec2Tagger(() -> singletonList(eventExtractor.extractRouteTable())));
+        taggers.put("CreateSubnet", new Ec2Tagger(() -> singletonList(eventExtractor.extractSubnetId())));
+        taggers.put("CreateVpc", new Ec2Tagger(() -> singletonList(eventExtractor.extractVPCId())));
     }
 
     public Tagger loadTagger(String eventName) {

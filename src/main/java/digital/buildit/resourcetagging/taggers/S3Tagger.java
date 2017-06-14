@@ -33,7 +33,4 @@ public class S3Tagger extends AbstractTagger<String> {
 
         s3Client.setBucketTaggingConfiguration(bucketName, bucketTaggingConfiguration);
     }
-
-
-
 }
