@@ -1,7 +1,9 @@
 package digital.buildit.resourcetagging.taggers;
 
 
-import digital.buildit.resourcetagging.event.IdentifierSupplier;
+import digital.buildit.resourcetagging.event.Event;
+
+import java.util.function.Function;
 
 /**
  *
@@ -9,9 +11,9 @@ import digital.buildit.resourcetagging.event.IdentifierSupplier;
  */
 abstract class AbstractTagger<T> implements Tagger {
 
-    IdentifierSupplier<T> idSupplier;
+    Function<Event, T> identifierFunction;
 
-    AbstractTagger(IdentifierSupplier<T> idSupplier) {
-        this.idSupplier = idSupplier;
+    AbstractTagger(Function<Event, T> identifierFunction) {
+        this.identifierFunction = identifierFunction;
     }
 }
