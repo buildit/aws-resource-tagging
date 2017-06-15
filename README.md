@@ -1,6 +1,6 @@
 Automatically tags aws resources on create with user arn. 
  
-Uses the serverless framework to build necessary resources. 
+Uses the Serverless framework to build necessary resources. 
 
 Currently supports to the following events:
 
@@ -14,9 +14,13 @@ Currently supports to the following events:
     - CreateVpc
 
 
-Events flow from Cloudwatch -> SNS -> Lambda.
+*Events flow from CloudWatch -> SNS -> Lambda.
 
-TODO:
+To add more taggers:
 
-    - Assumes the SNS topic is already created. Should create the topic on the fly
-    - Add more taggable resources.  
+    1. Extend the AbstractTagger and implement the Tag method
+    2. Add an instance of your tagger to the map in TaggerFactory
+    3. Add the necessary permissions to iamStatements in serverless.yml 
+    4. Update the CloudWatch EventPattern with source & eventName in serverless.yml 
+  
+  
