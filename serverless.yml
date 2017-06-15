@@ -4,7 +4,7 @@ provider:
   name: aws
   runtime: java8
 
-  region: ${opt:region}
+  region: ap-northeast-2
 
   iamRoleStatements:
     - Effect: "Allow"

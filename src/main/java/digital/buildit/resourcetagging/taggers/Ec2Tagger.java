@@ -26,6 +26,7 @@ public class Ec2Tagger extends AbstractTagger<List<String>> {
     public void tag(String userARN) {
         AmazonEC2 ec2Client = AmazonEC2ClientBuilder.defaultClient();
         Tag tag = new Tag(USER_ARN_TAG_KEY, userARN);
+        LOG.info("Tagging resource(s) " + idSupplier.get());
         CreateTagsRequest createTagsRequest = new CreateTagsRequest(idSupplier.get(), Collections.singletonList(tag));
         ec2Client.createTags(createTagsRequest);
     }

@@ -6,6 +6,7 @@ import com.amazonaws.services.lambda.model.ListTagsRequest;
 import com.amazonaws.services.lambda.model.ListTagsResult;
 import com.amazonaws.services.lambda.model.TagResourceRequest;
 import digital.buildit.resourcetagging.event.IdentifierSupplier;
+import org.apache.log4j.Logger;
 
 import java.util.Map;
 
@@ -15,6 +16,8 @@ import java.util.Map;
  */
 public class LambdaTagger extends AbstractTagger<String> {
 
+    private static final Logger LOG = Logger.getLogger(LambdaTagger.class);
+
     public LambdaTagger(IdentifierSupplier<String> identifierSupplier) {
         super(identifierSupplier);
     }
@@ -22,6 +25,7 @@ public class LambdaTagger extends AbstractTagger<String> {
     @Override
     public void tag(String userARN) {
         String functionARN = idSupplier.get();
+        LOG.info("Fetching tags for function " + functionARN);
 
         ListTagsRequest listTagsRequest = new ListTagsRequest();
         listTagsRequest.setResource(functionARN);
