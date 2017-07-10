@@ -1,0 +1,58 @@
+{
+  "version": "0",
+  "id": "079d1271-fd7d-46e0-b26d-aa9418930fb9",
+  "detail-type": "AWS API Call via CloudTrail",
+  "source": "aws.ec2",
+  "account": "000000000001",
+  "time": "2017-06-29T21:48:04Z",
+  "region": "some-region-2",
+  "resources": [],
+  "detail": {
+    "eventVersion": "1.05",
+    "userIdentity": {
+      "type": "IAMUser",
+      "principalId": "AXXXXXXXXXXXXXXXXXXXX",
+      "arn": "arn:aws:iam::000000000001:user/testuser",
+      "accountId": "000000000001",
+      "userName": "testuser",
+      "sessionContext": {
+        "attributes": {
+          "mfaAuthenticated": "false",
+          "creationDate": "2017-06-29T21:47:31Z"
+        }
+      },
+      "invokedBy": "cloudformation.amazonaws.com"
+    },
+    "eventTime": "2017-06-29T21:48:04Z",
+    "eventSource": "ec2.amazonaws.com",
+    "eventName": "CreateRouteTable",
+    "awsRegion": "some-region-2",
+    "sourceIPAddress": "cloudformation.amazonaws.com",
+    "userAgent": "cloudformation.amazonaws.com",
+    "requestParameters": {
+      "vpcId": "vpc-000001"
+    },
+    "responseElements": {
+      "routeTable": {
+        "routeTableId": "rtb-01010101",
+        "vpcId": "vpc-000001",
+        "routeSet": {
+          "items": [
+            {
+              "destinationCidrBlock": "10.215.0.0/16",
+              "gatewayId": "local",
+              "state": "active",
+              "origin": "CreateRouteTable"
+            }
+          ]
+        },
+        "associationSet": {},
+        "propagatingVgwSet": {},
+        "tagSet": {}
+      }
+    },
+    "requestID": "4604a36a-a1fc-486a-88ca-76df03072d82",
+    "eventID": "fb353459-1e8d-4d24-9a54-9e923efa3c4d",
+    "eventType": "AwsApiCall"
+  }
+}

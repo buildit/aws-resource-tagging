@@ -1,0 +1,87 @@
+{
+  "version": "0",
+  "id": "98faa8fe-46b2-48ae-9e12-2026d16b3ee2",
+  "detail-type": "AWS API Call via CloudTrail",
+  "source": "aws.ec2",
+  "account": "000000000001",
+  "time": "2017-06-29T21:51:36Z",
+  "region": "some-region-2",
+  "resources": [],
+  "detail": {
+    "eventVersion": "1.05",
+    "userIdentity": {
+      "type": "Root",
+      "principalId": "000000000001",
+      "arn": "arn:aws:iam::000000000001:user/testuser",
+      "accountId": "000000000001",
+      "userName": "testuser",
+      "invokedBy": "elasticloadbalancing.amazonaws.com"
+    },
+    "eventTime": "2017-06-29T21:51:36Z",
+    "eventSource": "ec2.amazonaws.com",
+    "eventName": "CreateNetworkInterface",
+    "awsRegion": "some-region-2",
+    "sourceIPAddress": "elasticloadbalancing.amazonaws.com",
+    "userAgent": "elasticloadbalancing.amazonaws.com",
+    "requestParameters": {
+      "subnetId": "subnet-00000001",
+      "description": "ELB app/autotagging",
+      "groupSet": {
+        "items": [
+          {
+            "groupId": "sg-0000001"
+          },
+          {
+            "groupId": "sg-0000001"
+          }
+        ]
+      },
+      "privateIpAddressesSet": {},
+      "ipv6AddressCount": 0
+    },
+    "responseElements": {
+      "networkInterface": {
+        "networkInterfaceId": "eni-000001",
+        "internalInterfaceId": "interface-010101010",
+        "subnetId": "subnet-00000001",
+        "vpcId": "vpc-000001",
+        "availabilityZone": "some-region-2c",
+        "description": "ELB app/autotagging",
+        "ownerId": "000000000001",
+        "requesterId": "requesterId",
+        "requesterManaged": true,
+        "status": "pending",
+        "macAddress": "00:00:00:00:00:00",
+        "privateIpAddress": "10.1.1.1",
+        "sourceDestCheck": true,
+        "groupSet": {
+          "items": [
+            {
+              "groupId": "sg-0000001",
+              "groupName": "autotagging-1KM2PFKB2PV5K"
+            },
+            {
+              "groupId": "sg-0000001",
+              "groupName": "autotagging-FSET7GYRWCXS"
+            }
+          ]
+        },
+        "attachableToInstanceBySet": {},
+        "associableWithElasticIpBySet": {},
+        "privateIpAddressesSet": {
+          "item": [
+            {
+              "privateIpAddress": "10.215.20.128",
+              "primary": true
+            }
+          ]
+        },
+        "ipv6AddressesSet": {},
+        "tagSet": {}
+      }
+    },
+    "requestID": "77c407ad-4ffe-442b-8571-f1e0c0046b07",
+    "eventID": "3b55a645-a65a-45b8-b151-7d6c066f9dca",
+    "eventType": "AwsApiCall"
+  }
+}
