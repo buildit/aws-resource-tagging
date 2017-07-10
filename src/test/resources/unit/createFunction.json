@@ -1,0 +1,69 @@
+{
+  "version": "0",
+  "id": "633a100a-f270-4578-a586-0c3690fbef35",
+  "detail-type": "AWS API Call via CloudTrail",
+  "source": "aws.lambda",
+  "account": "000000000001",
+  "time": "2017-06-16T13:18:02Z",
+  "region": "some-region-2",
+  "resources": [],
+  "detail": {
+    "eventVersion": "1.05",
+    "userIdentity": {
+      "type": "IAMUser",
+      "principalId": "AXXXXXXXXXXXXXXXXXXXX",
+      "arn": "arn:aws:iam::000000000001:user/testuser",
+      "accountId": "000000000001",
+      "accessKeyId": "ACCESSKEYID",
+      "userName": "testuser",
+      "sessionContext": {
+        "attributes": {
+          "mfaAuthenticated": "true",
+          "creationDate": "2017-06-16T13:15:55Z"
+        }
+      },
+      "invokedBy": "signin.amazonaws.com"
+    },
+    "eventTime": "2017-06-16T13:18:02Z",
+    "eventSource": "lambda.amazonaws.com",
+    "eventName": "CreateFunction20150331",
+    "awsRegion": "some-region-2",
+    "sourceIPAddress": "66.66.66.66",
+    "userAgent": "signin.amazonaws.com",
+    "requestParameters": {
+      "functionName": "testFunction",
+      "kMSKeyArn": "",
+      "role": "arn:aws:iam::000000000001:role/service-role/testlambda",
+      "memorySize": 128,
+      "code": {},
+      "timeout": 3,
+      "tracingConfig": {
+        "mode": "PassThrough"
+      },
+      "publish": false,
+      "description": "test",
+      "handler": "index.handler",
+      "runtime": "nodejs6.10"
+    },
+    "responseElements": {
+      "role": "arn:aws:iam::000000000001:role/service-role/testlambda",
+      "handler": "index.handler",
+      "memorySize": 128,
+      "runtime": "nodejs6.10",
+      "functionArn": "arn:aws:lambda:some-region-2:000000000001:function:testFunction",
+      "functionName": "TestFunction",
+      "codeSize": 216,
+      "version": "$LATEST",
+      "tracingConfig": {
+        "mode": "PassThrough"
+      },
+      "description": "test",
+      "lastModified": "2017-06-16T13:18:02.821+0000",
+      "codeSha256": "C5FgacwjRDH9FkbPTuLhx+EtcAu4nv94GdLBdRUVmik=",
+      "timeout": 3
+    },
+    "requestID": "39e35061-5296-11e7-aaec-87cf88f00206",
+    "eventID": "d1428739-a35e-495f-97f3-280a6e6d98af",
+    "eventType": "AwsApiCall"
+  }
+}

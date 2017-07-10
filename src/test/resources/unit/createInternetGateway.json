@@ -1,0 +1,45 @@
+{
+  "version": "0",
+  "id": "482c578b-f7a5-4f90-acef-843773c21252",
+  "detail-type": "AWS API Call via CloudTrail",
+  "source": "aws.ec2",
+  "account": "000000000001",
+  "time": "2017-06-28T23:34:00Z",
+  "region": "some-region-2",
+  "resources": [],
+  "detail": {
+    "eventVersion": "1.05",
+    "userIdentity": {
+      "type": "IAMUser",
+      "principalId": "AXXXXXXXXXXXXXXXXXXXX",
+      "arn": "arn:aws:iam::000000000001:user/testuser",
+      "accountId": "000000000001",
+      "accessKeyId": "ACCESSKEYID",
+      "userName": "testuser",
+      "sessionContext": {
+        "attributes": {
+          "mfaAuthenticated": "true",
+          "creationDate": "2017-06-28T15:16:30Z"
+        }
+      },
+      "invokedBy": "signin.amazonaws.com"
+    },
+    "eventTime": "2017-06-28T23:34:00Z",
+    "eventSource": "ec2.amazonaws.com",
+    "eventName": "CreateInternetGateway",
+    "awsRegion": "some-region-2",
+    "sourceIPAddress": "107.77.199.18",
+    "userAgent": "signin.amazonaws.com",
+    "requestParameters": null,
+    "responseElements": {
+      "internetGateway": {
+        "internetGatewayId": "igw-0000001",
+        "attachmentSet": {},
+        "tagSet": {}
+      }
+    },
+    "requestID": "c903ac6e-cba7-45f1-b58e-c1281722bef2",
+    "eventID": "c000c04c-d2d9-4a3e-8679-36d8421ef7d7",
+    "eventType": "AwsApiCall"
+  }
+}

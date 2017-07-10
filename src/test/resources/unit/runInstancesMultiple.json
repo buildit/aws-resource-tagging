@@ -1,0 +1,345 @@
+{
+  "version": "0",
+  "id": "ba0e7e8d-e605-44de-9168-527130308e62",
+  "detail-type": "AWS API Call via CloudTrail",
+  "source": "aws.ec2",
+  "account": "000000000001",
+  "time": "2017-06-30T21:53:24Z",
+  "region": "some-region-2",
+  "resources": [],
+  "detail": {
+    "eventVersion": "1.05",
+    "userIdentity": {
+      "type": "IAMUser",
+      "principalId": "AXXXXXXXXXXXXXXXXXXXX",
+      "arn": "arn:aws:iam::000000000001:user/testuser",
+      "accountId": "000000000001",
+      "accessKeyId": "ACCESSKEYID",
+      "userName": "testuser",
+      "sessionContext": {
+        "attributes": {
+          "mfaAuthenticated": "true",
+          "creationDate": "2017-06-30T18:11:14Z"
+        }
+      },
+      "invokedBy": "signin.amazonaws.com"
+    },
+    "eventTime": "2017-06-30T21:53:24Z",
+    "eventSource": "ec2.amazonaws.com",
+    "eventName": "RunInstances",
+    "awsRegion": "some-region-2",
+    "sourceIPAddress": "66.66.66.66",
+    "userAgent": "signin.amazonaws.com",
+    "requestParameters": {
+      "instancesSet": {
+        "items": [
+          {
+            "imageId": "ami-00000001",
+            "minCount": 3,
+            "maxCount": 3,
+            "keyName": "test-key"
+          }
+        ]
+      },
+      "groupSet": {
+        "items": [
+          {
+            "groupId": "sg-00000011"
+          }
+        ]
+      },
+      "instanceType": "t2.micro",
+      "blockDeviceMapping": {
+        "items": [
+          {
+            "deviceName": "/dev/xvda",
+            "ebs": {
+              "volumeSize": 8,
+              "deleteOnTermination": true,
+              "volumeType": "gp2"
+            }
+          }
+        ]
+      },
+      "tenancy": "default",
+      "monitoring": {
+        "enabled": false
+      },
+      "disableApiTermination": false,
+      "instanceInitiatedShutdownBehavior": "stop",
+      "clientToken": "SIXXXXXXXXXXXXXXXX",
+      "ebsOptimized": false
+    },
+    "responseElements": {
+      "requestId": "08903890-e1fd-41d8-8bd2-c5971b3dcac4",
+      "reservationId": "r-0e9ab04d472ebd596",
+      "ownerId": "000000000001",
+      "groupSet": {},
+      "instancesSet": {
+        "items": [
+          {
+            "instanceId": "i-000001",
+            "imageId": "ami-00000001",
+            "instanceState": {
+              "code": 0,
+              "name": "pending"
+            },
+            "privateDnsName": "ip-172-31-13-83.some-region-2.compute.internal",
+            "keyName": "test-key",
+            "amiLaunchIndex": 0,
+            "productCodes": {},
+            "instanceType": "t2.micro",
+            "launchTime": 1498859603000,
+            "placement": {
+              "availabilityZone": "some-region-2a",
+              "tenancy": "default"
+            },
+            "monitoring": {
+              "state": "disabled"
+            },
+            "subnetId": "subnet-00000001",
+            "vpcId": "vpc-000001",
+            "privateIpAddress": "172.1.1.1",
+            "stateReason": {
+              "code": "pending",
+              "message": "pending"
+            },
+            "architecture": "x86_64",
+            "rootDeviceType": "ebs",
+            "rootDeviceName": "/dev/xvda",
+            "blockDeviceMapping": {},
+            "virtualizationType": "hvm",
+            "hypervisor": "xen",
+            "clientToken": "SIXXXXXXXXXXXXXXXX",
+            "groupSet": {
+              "items": [
+                {
+                  "groupId": "sg-00000011",
+                  "groupName": "launch-wizard-6"
+                }
+              ]
+            },
+            "sourceDestCheck": true,
+            "networkInterfaceSet": {
+              "items": [
+                {
+                  "networkInterfaceId": "eni-0000001",
+                  "subnetId": "subnet-00000001",
+                  "vpcId": "vpc-000001",
+                  "ownerId": "000000000001",
+                  "status": "in-use",
+                  "macAddress": "00:00:00:00:00:00",
+                  "privateIpAddress": "172.1.1.1",
+                  "privateDnsName": "ip-172-31-13-83.some-region-2.compute.internal",
+                  "sourceDestCheck": true,
+                  "groupSet": {
+                    "items": [
+                      {
+                        "groupId": "sg-00000011",
+                        "groupName": "launch-wizard-6"
+                      }
+                    ]
+                  },
+                  "attachment": {
+                    "attachmentId": "eni-attach-0000000",
+                    "deviceIndex": 0,
+                    "status": "attaching",
+                    "attachTime": 1498859603000,
+                    "deleteOnTermination": true
+                  },
+                  "privateIpAddressesSet": {
+                    "item": [
+                      {
+                        "privateIpAddress": "172.1.1.1",
+                        "privateDnsName": "ip-172-31-13-83.some-region-2.compute.internal",
+                        "primary": true
+                      }
+                    ]
+                  },
+                  "ipv6AddressesSet": {},
+                  "tagSet": {}
+                }
+              ]
+            },
+            "ebsOptimized": false
+          },
+          {
+            "instanceId": "i-000002",
+            "imageId": "ami-00000001",
+            "instanceState": {
+              "code": 0,
+              "name": "pending"
+            },
+            "privateDnsName": "ip-172-31-0-152.some-region-2.compute.internal",
+            "keyName": "test-key",
+            "amiLaunchIndex": 1,
+            "productCodes": {},
+            "instanceType": "t2.micro",
+            "launchTime": 1498859603000,
+            "placement": {
+              "availabilityZone": "some-region-2a",
+              "tenancy": "default"
+            },
+            "monitoring": {
+              "state": "disabled"
+            },
+            "subnetId": "subnet-00000001",
+            "vpcId": "vpc-000001",
+            "privateIpAddress": "172.1.1.1",
+            "stateReason": {
+              "code": "pending",
+              "message": "pending"
+            },
+            "architecture": "x86_64",
+            "rootDeviceType": "ebs",
+            "rootDeviceName": "/dev/xvda",
+            "blockDeviceMapping": {},
+            "virtualizationType": "hvm",
+            "hypervisor": "xen",
+            "clientToken": "SIXXXXXXXXXXXXXXXX",
+            "groupSet": {
+              "items": [
+                {
+                  "groupId": "sg-00000011",
+                  "groupName": "launch-wizard-6"
+                }
+              ]
+            },
+            "sourceDestCheck": true,
+            "networkInterfaceSet": {
+              "items": [
+                {
+                  "networkInterfaceId": "eni-0000001",
+                  "subnetId": "subnet-00000001",
+                  "vpcId": "vpc-000001",
+                  "ownerId": "000000000001",
+                  "status": "in-use",
+                  "macAddress": "00:00:00:00:00:00",
+                  "privateIpAddress": "172.1.1.1",
+                  "privateDnsName": "ip-172-31-0-152.some-region-2.compute.internal",
+                  "sourceDestCheck": true,
+                  "groupSet": {
+                    "items": [
+                      {
+                        "groupId": "sg-00000011",
+                        "groupName": "launch-wizard-6"
+                      }
+                    ]
+                  },
+                  "attachment": {
+                    "attachmentId": "eni-attach-000000",
+                    "deviceIndex": 0,
+                    "status": "attaching",
+                    "attachTime": 1498859603000,
+                    "deleteOnTermination": true
+                  },
+                  "privateIpAddressesSet": {
+                    "item": [
+                      {
+                        "privateIpAddress": "172.1.1.1",
+                        "privateDnsName": "ip-172-31-0-152.some-region-2.compute.internal",
+                        "primary": true
+                      }
+                    ]
+                  },
+                  "ipv6AddressesSet": {},
+                  "tagSet": {}
+                }
+              ]
+            },
+            "ebsOptimized": false
+          },
+          {
+            "instanceId": "i-000003",
+            "imageId": "ami-00000001",
+            "instanceState": {
+              "code": 0,
+              "name": "pending"
+            },
+            "privateDnsName": "ip-172-31-13-221.some-region-2.compute.internal",
+            "keyName": "test-key",
+            "amiLaunchIndex": 2,
+            "productCodes": {},
+            "instanceType": "t2.micro",
+            "launchTime": 1498859603000,
+            "placement": {
+              "availabilityZone": "some-region-2a",
+              "tenancy": "default"
+            },
+            "monitoring": {
+              "state": "disabled"
+            },
+            "subnetId": "subnet-00000001",
+            "vpcId": "vpc-000001",
+            "privateIpAddress": "172.1.1.1",
+            "stateReason": {
+              "code": "pending",
+              "message": "pending"
+            },
+            "architecture": "x86_64",
+            "rootDeviceType": "ebs",
+            "rootDeviceName": "/dev/xvda",
+            "blockDeviceMapping": {},
+            "virtualizationType": "hvm",
+            "hypervisor": "xen",
+            "clientToken": "SIXXXXXXXXXXXXXXXX",
+            "groupSet": {
+              "items": [
+                {
+                  "groupId": "sg-00000011",
+                  "groupName": "launch-wizard-6"
+                }
+              ]
+            },
+            "sourceDestCheck": true,
+            "networkInterfaceSet": {
+              "items": [
+                {
+                  "networkInterfaceId": "eni-0000001",
+                  "subnetId": "subnet-00000001",
+                  "vpcId": "vpc-000001",
+                  "ownerId": "000000000001",
+                  "status": "in-use",
+                  "macAddress": "00:00:00:00:00:00",
+                  "privateIpAddress": "172.1.1.1",
+                  "privateDnsName": "ip-172-31-13-221.some-region-2.compute.internal",
+                  "sourceDestCheck": true,
+                  "groupSet": {
+                    "items": [
+                      {
+                        "groupId": "sg-00000011",
+                        "groupName": "launch-wizard-6"
+                      }
+                    ]
+                  },
+                  "attachment": {
+                    "attachmentId": "eni-attach-000000",
+                    "deviceIndex": 0,
+                    "status": "attaching",
+                    "attachTime": 1498859603000,
+                    "deleteOnTermination": true
+                  },
+                  "privateIpAddressesSet": {
+                    "item": [
+                      {
+                        "privateIpAddress": "172.1.1.1",
+                        "privateDnsName": "ip-172-31-13-221.some-region-2.compute.internal",
+                        "primary": true
+                      }
+                    ]
+                  },
+                  "ipv6AddressesSet": {},
+                  "tagSet": {}
+                }
+              ]
+            },
+            "ebsOptimized": false
+          }
+        ]
+      }
+    },
+    "requestID": "08903890-e1fd-41d8-8bd2-c5971b3dcac4",
+    "eventID": "004a43da-267b-4911-b99a-fa3425edaabf",
+    "eventType": "AwsApiCall"
+  }
+}

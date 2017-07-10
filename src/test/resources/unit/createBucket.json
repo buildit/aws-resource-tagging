@@ -1,0 +1,37 @@
+{
+  "version": "0",
+  "id": "80976d5f-4bfc-4385-bb40-b42eaf6a4255",
+  "detail-type": "AWS API Call via CloudTrail",
+  "source": "aws.s3",
+  "account": "000000000001",
+  "time": "2017-06-29T21:40:01Z",
+  "region": "some-region-2",
+  "resources": [],
+  "detail": {
+    "eventVersion": "1.04",
+    "userIdentity": {
+      "type": "IAMUser",
+      "principalId": "AXXXXXXXXXXXXXXXXXXXX",
+      "arn": "arn:aws:iam::000000000001:user/testuser",
+      "accountId": "000000000001",
+      "userName": "testuser"
+    },
+    "eventTime": "2017-06-29T21:40:01Z",
+    "eventSource": "s3.amazonaws.com",
+    "eventName": "CreateBucket",
+    "awsRegion": "some-region-2",
+    "sourceIPAddress": "66.66.66.66",
+    "userAgent": "[aws-cli/1.11.112 Python/2.7.13 Darwin/16.6.0 botocore/1.5.75]",
+    "requestParameters": {
+      "CreateBucketConfiguration": {
+        "LocationConstraint": "some-region-2",
+        "xmlns": "http://s3.amazonaws.com/doc/2006-03-01/"
+      },
+      "bucketName": "testuser.some-region-2"
+    },
+    "responseElements": null,
+    "requestID": "5CC4C8017DDFA9B8",
+    "eventID": "cbd15f01-d39e-4700-9530-ac836a968e95",
+    "eventType": "AwsApiCall"
+  }
+}
