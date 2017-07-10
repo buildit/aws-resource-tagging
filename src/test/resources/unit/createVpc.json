@@ -1,0 +1,54 @@
+{
+  "version": "0",
+  "id": "9f3b46b3-6ffb-40d1-92bc-bcea9a9cdc35",
+  "detail-type": "AWS API Call via CloudTrail",
+  "source": "aws.ec2",
+  "account": "000000000001",
+  "time": "2017-06-29T22:29:38Z",
+  "region": "some-region-2",
+  "resources": [],
+  "detail": {
+    "eventVersion": "1.05",
+    "userIdentity": {
+      "type": "IAMUser",
+      "principalId": "AXXXXXXXXXXXXXXXXXXXX",
+      "arn": "arn:aws:iam::000000000001:user/testuser",
+      "accountId": "000000000001",
+      "accessKeyId": "ACCESSKEYID",
+      "userName": "testuser",
+      "sessionContext": {
+        "attributes": {
+          "mfaAuthenticated": "true",
+          "creationDate": "2017-06-29T14:47:56Z"
+        }
+      },
+      "invokedBy": "signin.amazonaws.com"
+    },
+    "eventTime": "2017-06-29T22:29:38Z",
+    "eventSource": "ec2.amazonaws.com",
+    "eventName": "CreateVpc",
+    "awsRegion": "some-region-2",
+    "sourceIPAddress": "66.66.66.66",
+    "userAgent": "signin.amazonaws.com",
+    "requestParameters": {
+      "cidrBlock": "10.0.0.0/16",
+      "instanceTenancy": "default"
+    },
+    "responseElements": {
+      "requestId": "3712869c-6654-4a0a-a2c7-769dbebe48c9",
+      "vpc": {
+        "vpcId": "vpc-000001",
+        "state": "pending",
+        "cidrBlock": "10.0.0.0/16",
+        "ipv6CidrBlockAssociationSet": {},
+        "dhcpOptionsId": "dopt-6666666",
+        "instanceTenancy": "default",
+        "tagSet": {},
+        "isDefault": false
+      }
+    },
+    "requestID": "3712869c-6654-4a0a-a2c7-769dbebe48c9",
+    "eventID": "bb3ef6a6-a910-4951-8005-ef58de52f515",
+    "eventType": "AwsApiCall"
+  }
+}

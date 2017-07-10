@@ -1,0 +1,44 @@
+{
+  "version": "0",
+  "id": "631c2e95-82c1-4665-be7e-007db1c841ea",
+  "detail-type": "AWS API Call via CloudTrail",
+  "source": "aws.s3",
+  "account": "006393696278",
+  "time": "2017-06-28T21:29:34Z",
+  "region": "ap-northeast-2",
+  "resources": [],
+  "detail": {
+    "eventVersion": "1.04",
+    "userIdentity": {
+      "type": "IAMUser",
+      "principalId": "AXXXXXXXXXXXXXXXXXXXX",
+      "arn": "arn:aws:iam::006393696278:user/mthomas",
+      "accountId": "006393696278",
+      "userName": "mthomas",
+      "sessionContext": {
+        "attributes": {
+          "mfaAuthenticated": "true",
+          "creationDate": "2017-06-28T15:16:30Z"
+        }
+      },
+      "invokedBy": "signin.amazonaws.com"
+    },
+    "eventTime": "2017-06-28T21:29:34Z",
+    "eventSource": "s3.amazonaws.com",
+    "eventName": "CreateBucket",
+    "awsRegion": "ap-northeast-2",
+    "sourceIPAddress": "54.239.116.110",
+    "userAgent": "signin.amazonaws.com",
+    "requestParameters": {
+      "CreateBucketConfiguration": {
+        "LocationConstraint": "ap-northeast-2",
+        "xmlns": "http://s3.amazonaws.com/doc/2006-03-01/"
+      },
+      "bucketName": "miket-testing-awstagging"
+    },
+    "responseElements": null,
+    "requestID": "235ED6C729E92BC3",
+    "eventID": "6573d88a-b38b-4f16-899c-b785fca6ba57",
+    "eventType": "AwsApiCall"
+  }
+}
